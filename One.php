@@ -47,14 +47,7 @@
             } else {
            
             }
-            var btn = document.createElement("BUTTON");
-            btn.innerHTML = "Caliculate";
-            btn.id = "btn-id";
-            btn.type = "submit";
-            btn.name = "btn-name";
-            btn.className = "btnclass";
-            document.body.appendChild(btn);
-         }
+                  }
       </script>
    </body>
 
