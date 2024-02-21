@@ -4,11 +4,11 @@
       color: green;
       border-radius: 5px;
       border-color: black;
-      margin-top: 20px;
+      margin-top: 10px;
    }
 
    .inputclass {
-      color: gray;
+      color: gray;git branchhhjhbdnnfbnsgit border-start-end-radius: ;
       margin: 10px;
       border-style: outset;
       border-radius: 3px;
@@ -47,7 +47,14 @@
             } else {
            
             }
-                  }
+            var btn = document.createElement("BUTTON");
+            btn.innerHTML = "Caliculate";
+            btn.id = "btn-id";
+            btn.type = "submit";
+            btn.name = "btn-name";
+            btn.className = "btnclass";
+            document.body.appendChild(btn);
+         }
       </script>
    </body>
 
