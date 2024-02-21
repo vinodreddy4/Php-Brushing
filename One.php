@@ -4,7 +4,7 @@
       color: green;
       border-radius: 5px;
       border-color: black;
-      margin-top: 30px;
+      margin-top: 20px;
    }
 
    .inputclass {
