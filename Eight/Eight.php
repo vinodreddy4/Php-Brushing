@@ -4,6 +4,7 @@
         <h3>Please enter the words to print only the words starting with capital letters</h3>
         <label>Enter the number of words : </label>
         <input type="number" id="myInput" name="words" oninput="myFunction()"> </br> </br>
+        <p id="validation" style="color:red "></p>
         <div id="words">
         </div>
     </div>
@@ -13,7 +14,7 @@
     function myFunction() {
         var addlist = document.getElementById("words");
         let n = document.getElementById("myInput").value;
-        if (n != 0) {
+        if (n > 0) {
             for (i = 1; i <= n; i++) {
                 var linebreak = document.createElement('br');
 
@@ -26,13 +27,19 @@
                 inputElement.setAttribute('name', "word" + i);
                 inputElement.setAttribute('placeholder', 'Enter word');
                 inputElement.className = "inputclass";
+                inputElement.onchange = function () {
+                    var temp = this.value;
+                    if (temp.length < 0) {
+                        validation1.innerHTML = "Please enter the word";
+                    }
+                }
 
                 addlist.appendChild(newlabel);
                 addlist.appendChild(inputElement);
                 addlist.appendChild(linebreak);
             }
         } else {
-            print("Please enter the word");
+            validation.innerHTML = "Please enter the number greater than 0.";
         }
     }
 </script>
