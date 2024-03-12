@@ -6,7 +6,7 @@
         <input type="number" id="myInput" name="words" oninput="myFunction()"> </br> </br>
         <p id="validation" style="color:red "></p>
         <div id="words">
-        </div>
+        </div>     
     </div>
     <input type="submit" name="submit" />
 </form>

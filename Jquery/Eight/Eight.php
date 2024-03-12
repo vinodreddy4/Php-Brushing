@@ -1,15 +1,14 @@
 <html>
 
 <head>
-
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h3>Caliculate the average of the all the numbers.</h3>
-    <label>Please enter how many numbers you have:</label>
-    <input type="number" id="numInputs" placeholder="Enter number of input">
+    <h3>Make a sentence with the words starting with capital letters.</h3>
+    <label>Please enter how many words you have:</label>
+    <input type="number" id="numInputs" placeholder="Enter number of words">
     <button id="generateInputsButton">Generate Inputs</button>
     <form id="inputContainer">
         <!-- Input elements will be appended here -->
@@ -25,7 +24,7 @@
                 var numInputs = parseInt($('#numInputs').val());
 
                 // Check if the entered value is valid
-                if (isNaN(numInputs) || numInputs <= 0) {
+                if (isNaN(numInputs)) {
                     $('#message').text("Please enter a valid number greater than zero");
                     return;
                 } else {
@@ -38,14 +37,14 @@
                 // Create and append input elements to the container
                 for (var i = 0; i < numInputs; i++) {
                     var inputElement = $('<input>').attr({
-                        type: 'number',
+                        type: 'text',
                         name: 'student' + i,
                         id: 'student' + i,
-                        placeholder: 'Number',
+                        placeholder: 'word',
 
                     });
 
-                    var labelElement = $('<label>').text('Student ' + (i + 1) + ': '); // Create label
+                    var labelElement = $('<label>').text('Word ' + (i + 1) + ': '); // Create label
                     $('#inputContainer').append(labelElement).append(inputElement).append('<br>').append('<br>'); // Append label, input element, and a line break for spacing
                 }
             });
@@ -57,7 +56,7 @@
                 // Loop through each input element and validate
                 $('#inputContainer input').each(function () {
                     var value = parseInt($(this).val());
-                    if (isNaN(value) || value < 0 || value > 100) {
+                    if (value = "") {
                         isValid = false;
                         return false;
                     }
@@ -74,7 +73,7 @@
                         }
                     });
                 } else {
-                    $('#message').text('Please fill in all input fields with values between 0 and 100');
+                    $('#message').text('Please fill in all input fields with words.');
                 }
             });
         });

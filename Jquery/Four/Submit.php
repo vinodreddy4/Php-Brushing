@@ -9,19 +9,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     foreach ($values as $value) {
         if ($value != "" || $value >= 0 || $value <= 100) {
             $sum += $value;
-            $iterations++;
-            if ($iterations = $count) {
-                if ($sum % 3 == 0 && $sum % 7 == 0) {
-                    $response = "Sum is: $sum. This number is divisible by 3 and 7.";
-                } else {
-                    $response = "Sum is: $sum. This number is not divisible by 3 and 7.";
-                }
-            }
         } else {
             $response = "Values should be in between 0 and 100.";
             break;
         }
     }
+    $average = $sum/$count;
+    $response = "Average of marks is: $average.";
+
+
 } else {
     $response = "Access denied.";
 }

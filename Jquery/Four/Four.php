@@ -7,9 +7,9 @@
 </head>
 
 <body>
-    <h3>Caliculate the average of the all the numbers.</h3>
-    <label>Please enter how many numbers you have:</label>
-    <input type="number" id="numInputs" placeholder="Enter number of input">
+    <h3>Caluculate the average of the marks acquired by the students.</h3>
+    <label>Please enter how many students you have:</label>
+    <input type="number" id="numInputs" placeholder="Enter number">
     <button id="generateInputsButton">Generate Inputs</button>
     <form id="inputContainer">
         <!-- Input elements will be appended here -->
@@ -22,11 +22,11 @@
         $(document).ready(function () {
             $('#generateInputsButton').click(function () {
                 // Get the number of inputs to generate
-                var numInputs = parseInt($('#numInputs').val());
+                var marks = parseInt($('#numInputs').val());
 
                 // Check if the entered value is valid
-                if (isNaN(numInputs) || numInputs <= 0) {
-                    $('#message').text("Please enter a valid number greater than zero");
+                if (isNaN(marks) || marks <= 0) {
+                    $('#message').text("Please enter a valid number greater than zero.");
                     return;
                 } else {
                     $('#message').text("");
@@ -36,12 +36,12 @@
                 $('#inputContainer').empty();
 
                 // Create and append input elements to the container
-                for (var i = 0; i < numInputs; i++) {
+                for (var i = 0; i < marks; i++) {
                     var inputElement = $('<input>').attr({
                         type: 'number',
                         name: 'student' + i,
                         id: 'student' + i,
-                        placeholder: 'Number',
+                        placeholder: 'marks',
 
                     });
 
